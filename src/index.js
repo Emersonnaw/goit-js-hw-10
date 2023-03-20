@@ -1,11 +1,14 @@
 import './css/styles.css';
-import refs from './refs.js'
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import fetchCountries from './fetchCountries.js';
 const DEBOUNCE_DELAY = 300;
 let markup = null;
-
+refs = {
+    input: document.querySelector('#search-box'),
+    countryList: document.querySelector('.country-list'), //ul
+    countryInfo: document.querySelector('.country-info'), // div
+  };
 
 refs.input.addEventListener('input', debounce(onGetInputValue, DEBOUNCE_DELAY));
 
